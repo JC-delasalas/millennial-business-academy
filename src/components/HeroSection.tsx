@@ -26,9 +26,9 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-32 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left column - Main content */}
-          <div className="text-left">
+          <div className="text-left md:text-left text-center">
             <motion.div
-              className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6"
+              className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 mx-auto md:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -42,12 +42,13 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
+              style={{ letterSpacing: '-0.02em' }}
             >
               Master <span className="gradient-text">Data Analytics</span> for Career Advancement & Success
             </motion.h1>
 
             <motion.p
-              className="text-lg text-gray-300 mb-8 max-w-xl"
+              className="text-lg text-gray-300 mb-8 max-w-xl md:mx-0 mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.7 }}
@@ -63,7 +64,7 @@ const HeroSection = () => {
               transition={{ delay: 0.5, duration: 0.7, staggerChildren: 0.1 }}
             >
               <motion.div
-                className="flex items-start space-x-2"
+                className="flex md:items-start items-center md:justify-start justify-center space-x-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
@@ -75,7 +76,7 @@ const HeroSection = () => {
               </motion.div>
 
               <motion.div
-                className="flex items-start space-x-2"
+                className="flex md:items-start items-center md:justify-start justify-center space-x-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
@@ -87,7 +88,7 @@ const HeroSection = () => {
               </motion.div>
 
               <motion.div
-                className="flex items-start space-x-2"
+                className="flex md:items-start items-center md:justify-start justify-center space-x-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
@@ -143,7 +144,7 @@ const HeroSection = () => {
             </motion.div>
 
             <motion.p
-              className="text-gray-400 text-sm mt-6"
+              className="text-gray-400 text-sm mt-6 md:text-left text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1, duration: 0.7 }}

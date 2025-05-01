@@ -101,11 +101,13 @@
     overflow-x: hidden;
     width: 100%;
     position: relative;
+    font-family: 'Inter', sans-serif;
   }
 
   html {
     overflow-x: hidden;
     width: 100%;
+    font-family: 'Inter', sans-serif;
   }
 }
 
