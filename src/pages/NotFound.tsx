@@ -1,5 +1,9 @@
+
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,14 +16,26 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <div className="flex-grow flex items-center justify-center bg-gray-50 py-20">
+        <div className="text-center px-4">
+          <h1 className="text-6xl font-bold mb-6 gradient-text">404</h1>
+          <p className="text-2xl text-gray-700 mb-8">Oops! Page not found</p>
+          <p className="text-gray-600 mb-8 max-w-lg mx-auto">
+            The page you're looking for might have been moved or doesn't exist.
+            Let's get you back to learning!
+          </p>
+          <Button 
+            className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90"
+            size="lg"
+            asChild
+          >
+            <a href="/">Return to Home</a>
+          </Button>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

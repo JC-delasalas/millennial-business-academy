@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                // MBA Brand Colors
+                mba: {
+                    dark: "#1A1F2C",
+                    pink: "#D24C8E",
+                    teal: "#4DCFD9",
+                    light: "#F8F9FA",
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -89,7 +97,11 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+			},
+            backgroundImage: {
+                'hero-pattern': 'linear-gradient(rgba(26, 31, 44, 0.8), rgba(26, 31, 44, 0.8)), url("/lovable-uploads/1b1196ba-8fbf-475b-9073-ec18120ade73.png")',
+                'teal-pink-gradient': 'linear-gradient(90deg, #4DCFD9 0%, #D24C8E 100%)',
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
