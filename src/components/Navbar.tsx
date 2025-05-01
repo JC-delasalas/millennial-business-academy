@@ -107,6 +107,7 @@ const Navbar = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
+              {/* Mobile menu links */}
               <div className="px-6 pt-5 pb-6 space-y-0">
                 <Link to="/" className="block px-4 py-3.5 text-white hover:bg-white/10 transition-colors border-b border-white/10">Home</Link>
                 <Link to="/courses" className="block px-4 py-3.5 text-white hover:bg-white/10 transition-colors border-b border-white/10">Courses</Link>
