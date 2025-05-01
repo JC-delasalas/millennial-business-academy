@@ -1,5 +1,8 @@
 # Welcome to your Lovable project
 
+## Latest Update
+- Fixed image paths for Vercel deployment
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/67c5133b-72b4-4d7a-80fb-9ff8acba05e6
