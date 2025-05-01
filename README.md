@@ -1,25 +1,21 @@
-# Welcome to your Lovable project
+# Millennial Business Innovations (MBA)
 
 ## Latest Update
 - Fixed image paths for Vercel deployment
+- Updated favicon to properly display MBA logo
+- Removed third-party references
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/67c5133b-72b4-4d7a-80fb-9ff8acba05e6
+**URL**: https://millennialbusinessinnovations.vercel.app/
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/67c5133b-72b4-4d7a-80fb-9ff8acba05e6) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -65,12 +61,16 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/67c5133b-72b4-4d7a-80fb-9ff8acba05e6) and click on Share -> Publish.
+This project is deployed on Vercel. To deploy updates:
 
-## Can I connect a custom domain to my Lovable project?
+1. Push changes to the main branch
+2. Vercel will automatically deploy the changes
+
+## Can I connect a custom domain?
 
 Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+To connect a domain to your Vercel deployment:
+1. Go to your Vercel project settings
+2. Navigate to the Domains section
+3. Add your custom domain
