@@ -4,7 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Coaching from "./pages/Coaching";
 import NotFound from "./pages/NotFound";
+import PlaceholderPage from "./pages/PlaceholderPage";
+import './App.css';
 
 const queryClient = new QueryClient();
 
@@ -16,6 +19,31 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/coaching" element={<Coaching />} />
+
+          {/* Navbar Links */}
+          <Route path="/courses" element={<PlaceholderPage title="Analytics Courses" description="Explore our comprehensive analytics courses designed to help you master Power BI, SQL, Excel, and AI tools. Learn at your own pace with hands-on projects and expert guidance." />} />
+          <Route path="/learning-paths" element={<PlaceholderPage title="Learning Paths" description="Follow structured learning paths tailored to your career goals. From beginner to advanced, our curated paths guide you through the essential skills needed for analytics success." />} />
+          <Route path="/meet-the-expert" element={<PlaceholderPage title="Meet JC De las Alas" description="Learn more about JC De las Alas, an analytics coach expert with years of experience helping professionals transform their careers through data analytics mastery." />} />
+          <Route path="/testimonials" element={<PlaceholderPage title="Testimonials & FAQs" description="Read success stories from our students and find answers to frequently asked questions about our analytics coaching and courses." />} />
+          <Route path="/login" element={<PlaceholderPage title="Login" description="Access your MBA account to continue your analytics learning journey. Track your progress, access your courses, and connect with the community." comingSoon={false} />} />
+
+          {/* Footer Links */}
+          <Route path="/projects" element={<PlaceholderPage title="Guided Projects" description="Build your portfolio with real-world analytics projects. Our guided projects provide hands-on experience solving business problems with data." />} />
+          <Route path="/cohort" element={<PlaceholderPage title="Cohort Learning" description="Join a cohort of like-minded professionals for a structured, community-based learning experience. Learn together, share insights, and grow your network." />} />
+          <Route path="/crash-courses" element={<PlaceholderPage title="Crash Courses" description="Quick, intensive courses designed to get you up to speed on specific analytics tools and techniques in the shortest time possible." />} />
+          <Route path="/pricing" element={<PlaceholderPage title="Pricing Plans" description="Explore our flexible pricing options designed to fit your budget and learning goals. From individual courses to comprehensive packages." />} />
+          <Route path="/blog" element={<PlaceholderPage title="MBA Blog" description="Stay updated with the latest trends, tips, and insights in the world of business analytics. Our blog features expert articles, tutorials, and success stories." />} />
+          <Route path="/challenges" element={<PlaceholderPage title="Business Challenges" description="Test your analytics skills with our business challenges. Solve real-world problems, compete with peers, and showcase your expertise." />} />
+          <Route path="/playground" element={<PlaceholderPage title="Data Playground" description="Experiment with interactive data sets in our analytics playground. Practice your skills, test new techniques, and learn by doing." />} />
+          <Route path="/guides" element={<PlaceholderPage title="Guides & Reports" description="Access comprehensive guides, industry reports, and resources to deepen your understanding of data analytics and its business applications." />} />
+
+          {/* Company Links */}
+          <Route path="/about/team" element={<PlaceholderPage title="Meet The Team" description="Get to know the experts behind MBA. Our team of analytics professionals is dedicated to helping you succeed in your data journey." />} />
+          <Route path="/contact" element={<PlaceholderPage title="Contact Us" description="Have questions or need assistance? Reach out to our team for support with your analytics learning journey." comingSoon={false} />} />
+          <Route path="/terms" element={<PlaceholderPage title="Terms of Service" description="Please read these terms carefully before using our platform. By accessing or using MBA services, you agree to be bound by these terms and conditions." comingSoon={false} />} />
+          <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" description="At MBA, we take your privacy seriously. This policy outlines how we collect, use, and protect your personal information when you use our services." comingSoon={false} />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

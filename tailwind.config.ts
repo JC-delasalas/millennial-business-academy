@@ -1,6 +1,9 @@
 
 import type { Config } from "tailwindcss";
 
+// Note: We can't directly import assets here as this file is processed by the tailwind CLI
+// We'll use a relative path that will work in both dev and production
+
 export default {
 	darkMode: ["class"],
 	content: [
@@ -66,9 +69,21 @@ export default {
                 // MBA Brand Colors
                 mba: {
                     dark: "#1A1F2C",
+                    darker: "#141820",
                     pink: "#D24C8E",
+                    "pink-light": "#E76CAE",
+                    "pink-dark": "#B23A7A",
                     teal: "#4DCFD9",
+                    "teal-light": "#6EECF5",
+                    "teal-dark": "#3AACB5",
                     light: "#F8F9FA",
+                    gray: "#8A94A6",
+                    "gray-light": "#CDD5DF",
+                    "gray-dark": "#5A6478",
+                    accent: "#FFB347", // Orange accent
+                    success: "#4CAF50",
+                    warning: "#FF9800",
+                    error: "#F44336",
                 }
 			},
 			borderRadius: {
@@ -92,15 +107,42 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				marquee: {
+					'0%': { transform: 'translateX(0%)' },
+					'100%': { transform: 'translateX(-100%)' }
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 15px 5px rgba(77, 207, 217, 0.4), 0 0 30px 10px rgba(210, 76, 142, 0.2)'
+					},
+					'50%': {
+						boxShadow: '0 0 25px 10px rgba(77, 207, 217, 0.6), 0 0 40px 15px rgba(210, 76, 142, 0.3)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'marquee': 'marquee 25s linear infinite',
+				'pulse-slow': 'pulse-glow 3s ease-in-out infinite'
 			},
             backgroundImage: {
-                'hero-pattern': 'linear-gradient(rgba(26, 31, 44, 0.8), rgba(26, 31, 44, 0.8)), url("/lovable-uploads/1b1196ba-8fbf-475b-9073-ec18120ade73.png")',
+                // Use a path that works in both dev and production environments
+                'hero-pattern': 'linear-gradient(rgba(26, 31, 44, 0.85), rgba(26, 31, 44, 0.9)), url("/JC.png")',
                 'teal-pink-gradient': 'linear-gradient(90deg, #4DCFD9 0%, #D24C8E 100%)',
+                'teal-pink-diagonal': 'linear-gradient(135deg, #4DCFD9 0%, #D24C8E 100%)',
+                'dark-gradient': 'linear-gradient(180deg, #1A1F2C 0%, #141820 100%)',
+                'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+                'mesh-pattern': 'radial-gradient(circle at center, rgba(77, 207, 217, 0.15) 0, rgba(210, 76, 142, 0.15) 100%)',
+                'dots-pattern': 'radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
+                'glow-teal': 'radial-gradient(circle at center, rgba(77, 207, 217, 0.3) 0, transparent 70%)',
+                'glow-pink': 'radial-gradient(circle at center, rgba(210, 76, 142, 0.3) 0, transparent 70%)',
+            },
+            backgroundSize: {
+                'dots-sm': '20px 20px',
+                'dots-md': '30px 30px',
+                'dots-lg': '40px 40px',
             }
 		}
 	},

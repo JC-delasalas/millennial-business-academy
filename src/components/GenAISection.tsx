@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const GenAISection = () => {
   return (
@@ -17,16 +18,19 @@ const GenAISection = () => {
               your competitive advantage with tools like ChatGPT,
               Gemini and Copilot.
             </p>
-            <Button className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90">
-              Explore GenAI Courses
+            <Button className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90 transition-all duration-300 group">
+              <span className="flex items-center">
+                Explore GenAI Courses
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </span>
             </Button>
           </div>
-          
+
           <div className="relative">
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 shadow-xl">
-              <img 
-                src="/lovable-uploads/8f429bcb-6087-43e9-9d57-80382cc82d0b.png" 
-                alt="AI Conversation" 
+            <div className="glass-dark backdrop-blur-md rounded-lg p-8 shadow-xl border border-white/10">
+              <img
+                src="/ai-conversation-interface-fixed.svg"
+                alt="AI Conversation Interface"
                 className="w-full rounded-md shadow-lg"
               />
               <div className="mt-6">
@@ -45,13 +49,13 @@ const GenAISection = () => {
                     <span className="mx-2 text-gray-500">•</span>
                     <span className="text-gray-300 text-sm">Beginner</span>
                   </div>
-                  <Button variant="outline" size="sm" className="text-white border-white hover:bg-white hover:text-mba-dark">
+                  <Button size="sm" className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white hover:text-mba-dark transition-all duration-300">
                     View Course
                   </Button>
                 </div>
               </div>
             </div>
-            
+
             <div className="absolute -top-4 -right-4 bg-gradient-to-r from-mba-teal to-mba-pink p-1 rounded-full">
               <div className="bg-white rounded-full h-8 w-8 flex items-center justify-center">
                 <span className="text-mba-dark font-bold text-sm">New</span>

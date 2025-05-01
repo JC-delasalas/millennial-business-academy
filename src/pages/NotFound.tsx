@@ -26,12 +26,16 @@ const NotFound = () => {
             The page you're looking for might have been moved or doesn't exist.
             Let's get you back to learning!
           </p>
-          <Button 
-            className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90"
+          <Button
+            className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90 relative overflow-hidden group"
             size="lg"
             asChild
           >
-            <a href="/">Return to Home</a>
+            <a href="/">
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent opacity-50"></span>
+              <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent opacity-50 rounded-t-full"></span>
+              <span className="relative z-10">Return to Home</span>
+            </a>
           </Button>
         </div>
       </div>
