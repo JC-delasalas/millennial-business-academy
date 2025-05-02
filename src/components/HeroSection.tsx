@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ChevronRight, Sparkles, CalendarDays, Award, Users, Zap, Quote } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import ParticleAnimation from './ParticleAnimation';
 
 const HeroSection = () => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -18,6 +19,9 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-mba-darker/75 to-mba-dark/90 backdrop-blur-sm"></div>
       <div className="absolute inset-0 bg-mesh-pattern bg-cover opacity-40"></div>
       <div className="absolute inset-0 bg-dots-pattern bg-dots-md opacity-25"></div>
+
+      {/* Interactive particle animation */}
+      <ParticleAnimation />
 
       {/* Animated glow effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-glow-teal opacity-25 blur-3xl"></div>
