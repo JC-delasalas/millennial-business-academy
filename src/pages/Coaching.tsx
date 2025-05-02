@@ -1,14 +1,21 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CalendarDays, CheckCircle2, ArrowRight } from 'lucide-react';
+import { CalendarDays, CheckCircle2, ArrowRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import BookingEmbed from '@/components/BookingEmbed';
 
 const Coaching = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [showBookingForm, setShowBookingForm] = useState(false);
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+
+
 
       {/* Hero Section */}
       <div className="bg-hero-pattern bg-cover bg-center relative pt-32 pb-20">
@@ -104,50 +111,88 @@ const Coaching = () => {
             </div>
 
             {/* Right Column - GHL Embed and Pricing */}
-            <div className="glass-dark rounded-xl p-8 text-white border border-white/10 relative overflow-hidden">
+            <div className="glass-dark rounded-xl p-8 text-white border border-white/10 relative overflow-hidden transition-all duration-500" style={{ minHeight: showBookingForm ? '700px' : 'auto' }}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-mba-teal/20 to-transparent rounded-bl-full"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-mba-pink/20 to-transparent rounded-tr-full"></div>
 
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-6">Start Your Analytics Journey</h3>
+              <div className="relative z-10 h-full">
+                <AnimatePresence mode="wait">
+                  {!showBookingForm ? (
+                    <motion.div
+                      key="pricing-card"
+                      initial={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -100 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="h-full"
+                    >
+                      <h3 className="text-2xl font-bold mb-6">Start Your Analytics Journey</h3>
 
-                {/* GHL Embed Placeholder - Replace with actual GHL embed code */}
-                <div className="bg-white/10 rounded-lg p-6 mb-6 text-center">
-                  <CalendarDays className="h-12 w-12 mx-auto mb-4 text-mba-teal" />
-                  <p className="text-white mb-4">
-                    Ready to accelerate your analytics career? Schedule your coaching session now.
-                  </p>
-                  <Button className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90 w-full transition-all duration-300 relative overflow-hidden group">
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent opacity-50"></span>
-                    <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent opacity-50 rounded-t-full"></span>
-                    <span className="flex items-center justify-center relative z-10">
-                      Start Your Journey
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </span>
-                  </Button>
-                  <p className="text-xs text-gray-300 mt-4">
-                    * This will open the booking system where you can select your preferred date and time
-                  </p>
-                </div>
+                      {/* GHL Embed Placeholder - Replace with actual GHL embed code */}
+                      <div className="bg-white/10 rounded-lg p-6 mb-6 text-center">
+                        <CalendarDays className="h-12 w-12 mx-auto mb-4 text-mba-teal" />
+                        <p className="text-white mb-4">
+                          Ready to accelerate your analytics career? Schedule your coaching session now.
+                        </p>
+                        <Button
+                          className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90 w-full transition-all duration-300 relative overflow-hidden group"
+                          onClick={() => setShowBookingForm(true)}
+                        >
+                          <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent opacity-50"></span>
+                          <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent opacity-50 rounded-t-full"></span>
+                          <span className="flex items-center justify-center relative z-10">
+                            Start Your Journey
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </span>
+                        </Button>
+                        <p className="text-xs text-gray-300 mt-4">
+                          * This will open the booking form directly in this card
+                        </p>
+                      </div>
 
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center pb-2 border-b border-white/20">
-                    <span>Single Session (90 min)</span>
-                    <span className="font-bold">$199</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-2 border-b border-white/20">
-                    <span>4-Session Package</span>
-                    <span className="font-bold">$699 <span className="text-xs line-through text-gray-400 ml-1">$796</span></span>
-                  </div>
-                  <div className="flex justify-between items-center pb-2 border-b border-white/20">
-                    <span>8-Session Package</span>
-                    <span className="font-bold">$1299 <span className="text-xs line-through text-gray-400 ml-1">$1592</span></span>
-                  </div>
-                </div>
+                      <div className="space-y-4">
+                        <div className="flex justify-between items-center pb-2 border-b border-white/20">
+                          <span>Single Session (90 min)</span>
+                          <span className="font-bold">$199</span>
+                        </div>
+                        <div className="flex justify-between items-center pb-2 border-b border-white/20">
+                          <span>4-Session Package</span>
+                          <span className="font-bold">$699 <span className="text-xs line-through text-gray-400 ml-1">$796</span></span>
+                        </div>
+                        <div className="flex justify-between items-center pb-2 border-b border-white/20">
+                          <span>8-Session Package</span>
+                          <span className="font-bold">$1299 <span className="text-xs line-through text-gray-400 ml-1">$1592</span></span>
+                        </div>
+                      </div>
 
-                <p className="text-sm text-gray-300 mt-6">
-                  All packages include personalized learning materials, project reviews, and email support between sessions.
-                </p>
+                      <p className="text-sm text-gray-300 mt-6">
+                        All packages include personalized learning materials, project reviews, and email support between sessions.
+                      </p>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="booking-form"
+                      initial={{ opacity: 0, x: 100 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="h-full"
+                    >
+                      <div className="flex justify-between items-center mb-4">
+                        <h3 className="text-2xl font-bold">Book Your Session</h3>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          onClick={() => setShowBookingForm(false)}
+                          className="text-white hover:bg-white/10"
+                        >
+                          <X className="h-5 w-5" />
+                        </Button>
+                      </div>
+                      <div className="h-[600px] rounded-lg overflow-hidden">
+                        <BookingEmbed className="h-full w-full" />
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>
@@ -266,7 +311,18 @@ const Coaching = () => {
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Take the first step toward mastering analytics tools and advancing your career.
           </p>
-          <Button size="lg" className="bg-white text-mba-dark hover:bg-gray-100 rounded-full px-8 py-6 h-auto font-bold text-lg relative overflow-hidden group">
+          <Button
+            size="lg"
+            className="bg-white text-mba-dark hover:bg-gray-100 rounded-full px-8 py-6 h-auto font-bold text-lg relative overflow-hidden group"
+            onClick={() => {
+              setShowBookingForm(true);
+              // Scroll to the booking form section
+              const element = document.querySelector('.glass-dark');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }}
+          >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/5 to-transparent opacity-50"></span>
             <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/40 to-transparent opacity-50 rounded-t-full"></span>
             <span className="relative z-10">Start Your Analytics Journey Now</span>
