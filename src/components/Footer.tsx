@@ -20,8 +20,12 @@ const Footer = () => {
           <div className="lg:col-span-4">
             <div className="mb-6">
               <div className="flex items-center">
-                <div className="h-12 w-12 rounded-full bg-gradient-to-r from-mba-teal to-mba-pink flex items-center justify-center text-white font-bold mr-3 shadow-glow-teal">
-                  MBA
+                <div className="h-12 w-12 rounded-full bg-gradient-to-r from-mba-teal to-mba-pink flex items-center justify-center p-0.5 mr-3 shadow-glow-teal" style={{ overflow: 'hidden' }}>
+                  <img
+                    src="/V1-PNG-MBA.png"
+                    alt="MBA Logo"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <span className="text-white font-bold text-xl">Millennial Business Academy</span>
               </div>

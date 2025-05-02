@@ -49,8 +49,12 @@ const Navbar = () => {
               <Link to="/" className="flex items-center">
                 <div className="h-9 w-auto relative">
                   <div className="flex items-center">
-                    <div className="bg-gradient-to-r from-mba-teal to-mba-pink rounded-full p-2 mr-2 md:mr-3 flex items-center justify-center" style={{ width: '36px', height: '36px', minWidth: '36px' }}>
-                      <span className="text-white font-bold text-sm">MBA</span>
+                    <div className="bg-gradient-to-r from-mba-teal to-mba-pink rounded-full p-0.5 mr-2 md:mr-3 flex items-center justify-center" style={{ width: '36px', height: '36px', minWidth: '36px', overflow: 'hidden' }}>
+                      <img
+                        src="/V1-PNG-MBA.png"
+                        alt="MBA Logo"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                   </div>
                 </div>
