@@ -4,7 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Coaching from "./pages/Coaching";
+import Courses from "./pages/Courses";
+import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import './App.css';
@@ -19,14 +20,14 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/coaching" element={<Coaching />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/checkout" element={<Checkout />} />
 
           {/* Navbar Links */}
-          <Route path="/courses" element={<PlaceholderPage title="Analytics Courses" description="Explore our comprehensive analytics courses designed to help you master Power BI, SQL, Excel, and AI tools. Learn at your own pace with hands-on projects and expert guidance." />} />
           <Route path="/learning-paths" element={<PlaceholderPage title="Learning Paths" description="Follow structured learning paths tailored to your career goals. From beginner to advanced, our curated paths guide you through the essential skills needed for analytics success." />} />
           <Route path="/meet-the-expert" element={<PlaceholderPage title="Meet JC De las Alas" description="Learn more about JC De las Alas, an analytics coach expert with years of experience helping professionals transform their careers through data analytics mastery." />} />
           <Route path="/testimonials" element={<PlaceholderPage title="Testimonials & FAQs" description="Read success stories from our students and find answers to frequently asked questions about our analytics coaching and courses." />} />
-          <Route path="/login" element={<PlaceholderPage title="Login" description="Access your MBA account to continue your analytics learning journey. Track your progress, access your courses, and connect with the community." comingSoon={false} />} />
+          {/* Login route redirects to external URL via the Navbar component */}
 
           {/* Footer Links */}
           <Route path="/projects" element={<PlaceholderPage title="Guided Projects" description="Build your portfolio with real-world analytics projects. Our guided projects provide hands-on experience solving business problems with data." />} />

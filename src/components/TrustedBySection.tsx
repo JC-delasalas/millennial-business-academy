@@ -183,14 +183,14 @@ const TrustedBySection = () => {
             Elevate your team's analytics skills with personalized coaching from JC De las Alas, helping your organization make data-driven decisions.
           </p>
           <Button
-            className="btn-modern bg-gradient-to-r from-mba-teal to-mba-pink text-white rounded-full px-5 sm:px-8 py-3 sm:py-6 h-auto relative overflow-hidden group shadow-lg hover:shadow-xl animate-pulse-slow"
+            className="btn-modern hero-cta-button bg-gradient-to-r from-mba-teal to-mba-pink text-white rounded-full py-3 sm:py-6 h-auto relative overflow-hidden group shadow-lg hover:shadow-xl animate-pulse-slow"
             asChild
           >
-            <Link to="/coaching">
+            <Link to="/courses">
               <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent opacity-50"></span>
               <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent opacity-50 rounded-t-full"></span>
               <span className="absolute -inset-1 bg-gradient-to-r from-mba-teal/30 to-mba-pink/30 rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="btn-modern-content relative z-10 text-sm sm:text-base">
+              <span className="btn-modern-content relative z-10 text-sm sm:text-base px-2">
                 <span className="hidden sm:inline">Start Your Analytics Journey</span>
                 <span className="sm:hidden">Start Now</span>
               </span>

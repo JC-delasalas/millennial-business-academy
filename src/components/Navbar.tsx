@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <header className={`fixed w-full z-[110] transition-all duration-300 top-0 py-6`}>
       <div className="flex justify-center px-4 sm:px-6">
-        <div className={`glass-dark backdrop-blur-md rounded-full px-5 md:px-8 py-4 md:py-5 flex items-center justify-between ${scrolled ? 'shadow-lg' : ''}`} style={{ maxWidth: windowWidth < 768 ? '90%' : '850px', width: windowWidth < 768 ? '90%' : 'auto' }}>
+        <div className={`glass-dark backdrop-blur-md rounded-full px-5 md:px-8 py-4 md:py-5 flex items-center justify-between ${scrolled ? 'shadow-lg' : ''}`} style={{ maxWidth: '850px', width: windowWidth < 768 ? '90%' : 'auto' }}>
           {/* Logo - Visible on all devices */}
           <div className="flex items-center">
             {/* Logo */}
@@ -64,7 +64,6 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-7 mx-4">
-            <Link to="/" className="text-white hover:text-mba-teal transition-colors text-base font-medium">Home</Link>
             <Link to="/courses" className="text-white hover:text-mba-teal transition-colors text-base font-medium">Courses</Link>
             <Link to="/learning-paths" className="text-white hover:text-mba-teal transition-colors text-base font-medium">Learning Paths</Link>
             <Link to="/meet-the-expert" className="text-white hover:text-mba-teal transition-colors text-base font-medium">Meet JC</Link>
@@ -75,14 +74,14 @@ const Navbar = () => {
           <div className="flex items-center">
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <Link to="/login" className="text-white hover:text-mba-teal transition-colors text-base font-medium">
+              <a href="https://millennialbusinessacademy.net/login" target="_blank" rel="noopener noreferrer" className="text-white hover:text-mba-teal transition-colors text-base font-medium">
                 Login
-              </Link>
-              <Link to="/coaching" className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90 text-white px-5 py-2 rounded-full text-sm font-medium transition-colors relative overflow-hidden group shadow-lg hover:shadow-xl animate-pulse-slow">
+              </a>
+              <Link to="/courses" className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90 text-white px-5 py-2 rounded-full text-sm font-medium transition-colors relative overflow-hidden group shadow-lg hover:shadow-xl animate-pulse-slow">
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent opacity-50"></span>
                 <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent opacity-50 rounded-t-full"></span>
                 <span className="absolute -inset-1 bg-gradient-to-r from-mba-teal/30 to-mba-pink/30 rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-300"></span>
-                <span className="relative z-10">Start Now</span>
+                <span className="relative z-10">Explore Courses</span>
               </Link>
             </div>
 
@@ -113,7 +112,6 @@ const Navbar = () => {
             >
               {/* Mobile menu links */}
               <div className="px-6 pt-5 pb-6 space-y-0">
-                <Link to="/" className="block px-4 py-3.5 text-white hover:bg-white/10 transition-colors border-b border-white/10">Home</Link>
                 <Link to="/courses" className="block px-4 py-3.5 text-white hover:bg-white/10 transition-colors border-b border-white/10">Courses</Link>
                 <Link to="/learning-paths" className="block px-4 py-3.5 text-white hover:bg-white/10 transition-colors border-b border-white/10">Learning Paths</Link>
                 <Link to="/meet-the-expert" className="block px-4 py-3.5 text-white hover:bg-white/10 transition-colors border-b border-white/10">Meet JC</Link>
@@ -121,17 +119,19 @@ const Navbar = () => {
 
                 <div className="pt-6 pb-2 space-y-3">
                   <Link
-                    to="/coaching"
+                    to="/courses"
                     className="block w-full text-center px-4 py-3 bg-gradient-to-r from-mba-teal to-mba-pink text-white rounded-full font-medium transition-colors"
                   >
-                    Start Now
+                    Explore Courses
                   </Link>
-                  <Link
-                    to="/login"
+                  <a
+                    href="https://millennialbusinessacademy.net/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block w-full text-center px-4 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full font-medium transition-colors"
                   >
                     Login
-                  </Link>
+                  </a>
                 </div>
               </div>
             </motion.div>

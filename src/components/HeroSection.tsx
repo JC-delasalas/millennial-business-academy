@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Sparkles, CalendarDays, Award, Users, Zap, Quote } from 'lucide-react';
+import { Sparkles, CalendarDays, Award, Users, Zap, Quote } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ParticleAnimation from './ParticleAnimation';
@@ -114,17 +114,16 @@ const HeroSection = () => {
               <div className="w-full sm:w-auto max-w-[280px] mx-auto sm:mx-0">
                 <Button
                   size="lg"
-                  className="btn-modern bg-gradient-to-r from-mba-teal to-mba-pink text-white font-medium text-base sm:text-lg px-6 sm:px-8 rounded-full h-12 sm:h-14 shadow-lg hover:shadow-xl relative overflow-hidden group animate-pulse-slow w-full"
+                  className="btn-modern hero-cta-button bg-gradient-to-r from-mba-teal to-mba-pink text-white font-medium text-base sm:text-lg rounded-full h-12 sm:h-14 shadow-lg hover:shadow-xl relative overflow-hidden group animate-pulse-slow w-full"
                   asChild
                 >
-                  <Link to="/coaching">
+                  <Link to="/courses">
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent opacity-50"></span>
                     <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent opacity-50 rounded-t-full"></span>
                     <span className="absolute -inset-1 bg-gradient-to-r from-mba-teal/30 to-mba-pink/30 rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    <span className="btn-modern-content flex items-center justify-center relative z-10">
+                    <span className="btn-modern-content flex items-center justify-center relative z-10 px-2">
                       <span className="hidden sm:inline">Start Your Analytics Journey</span>
                       <span className="sm:hidden">Start Now</span>
-                      <ChevronRight className="ml-2 h-5 w-5" />
                     </span>
                   </Link>
                 </Button>
@@ -137,7 +136,7 @@ const HeroSection = () => {
                   className="glass text-white border-white/30 hover:border-white hover:bg-white/10 rounded-full h-12 sm:h-14 flex items-center justify-center relative overflow-hidden group w-full"
                   asChild
                 >
-                  <Link to="/coaching">
+                  <Link to="/courses">
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/10 to-transparent opacity-30"></span>
                     <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/20 to-transparent opacity-30 rounded-t-full"></span>
                     <CalendarDays className="mr-2 h-5 w-5 text-mba-teal relative z-10" />

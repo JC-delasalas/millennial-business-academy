@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Rocket, CalendarDays, Star } from 'lucide-react';
+import { Users, Rocket, CalendarDays, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const CallToAction = () => {
@@ -44,17 +44,16 @@ const CallToAction = () => {
                 Work directly with JC to accelerate your analytics career with personalized guidance, hands-on projects, and expert feedback.
               </p>
               <Button
-                className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90 w-full md:w-auto group transition-all duration-300 relative overflow-hidden shadow-lg hover:shadow-xl animate-pulse-slow py-2 h-auto"
+                className="bg-gradient-to-r from-mba-teal to-mba-pink hover:opacity-90 w-full md:w-auto group transition-all duration-300 relative overflow-hidden shadow-lg hover:shadow-xl animate-pulse-slow py-2 hero-cta-button h-auto"
                 asChild
               >
-                <Link to="/coaching">
+                <Link to="/courses">
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent opacity-50"></span>
                   <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent opacity-50 rounded-t-full"></span>
                   <span className="absolute -inset-1 bg-gradient-to-r from-mba-teal/30 to-mba-pink/30 rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  <span className="flex items-center relative z-10 text-sm sm:text-base">
+                  <span className="flex items-center relative z-10 text-sm sm:text-base px-2">
                     <span className="hidden sm:inline">Start Your Analytics Journey</span>
                     <span className="sm:hidden">Start Now</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Link>
               </Button>
@@ -87,16 +86,15 @@ const CallToAction = () => {
                 Our most comprehensive coaching package includes 8 sessions, unlimited email support, personalized projects, and career strategy planning.
               </p>
               <Button
-                className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white hover:text-mba-dark w-full md:w-auto group transition-all duration-300 relative overflow-hidden py-2 h-auto"
+                className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white hover:text-mba-dark w-full md:w-auto group transition-all duration-300 relative overflow-hidden py-2 hero-cta-button h-auto"
                 asChild
               >
-                <Link to="/coaching">
+                <Link to="/courses">
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/10 to-transparent opacity-30"></span>
                   <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/20 to-transparent opacity-30 rounded-t-full"></span>
-                  <span className="flex items-center relative z-10 text-sm sm:text-base">
+                  <span className="flex items-center relative z-10 text-sm sm:text-base px-2">
                     <span className="hidden sm:inline">View Premium Package</span>
                     <span className="sm:hidden">View Premium</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Link>
               </Button>

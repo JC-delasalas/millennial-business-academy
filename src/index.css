@@ -50,6 +50,20 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* MBA Brand Colors for GHL Form */
+    --mba-dark: #1A1F2C;
+    --mba-darker: #141820;
+    --mba-pink: #D24C8E;
+    --mba-pink-light: #E76CAE;
+    --mba-pink-dark: #B23A7A;
+    --mba-teal: #4DCFD9;
+    --mba-teal-light: #6EECF5;
+    --mba-teal-dark: #3AACB5;
+    --mba-light: #F8F9FA;
+    --mba-gray: #8A94A6;
+    --mba-gray-light: #CDD5DF;
+    --mba-gray-dark: #5A6478;
   }
 
   .dark {
@@ -167,6 +181,41 @@
 
 .btn-modern-content {
   @apply relative z-10;
+}
+
+/* Hero button with extra padding */
+.hero-cta-button {
+  @apply px-10 sm:px-12 !important;
+}
+
+.hero-cta-button .btn-modern-content {
+  @apply px-2 !important;
+}
+
+.hero-cta-button .btn-modern-content svg,
+.hero-cta-button svg {
+  @apply ml-4 !important;
+}
+
+/* Override animation effects to preserve padding */
+@keyframes preserve-padding {
+  0%, 50%, 100% {
+    padding-left: 2.5rem !important; /* px-10 */
+    padding-right: 2.5rem !important;
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes preserve-padding {
+    0%, 50%, 100% {
+      padding-left: 3rem !important; /* sm:px-12 */
+      padding-right: 3rem !important;
+    }
+  }
+}
+
+.hero-cta-button.animate-pulse-slow {
+  animation: pulse-glow 3s ease-in-out infinite, preserve-padding 3s ease-in-out infinite !important;
 }
 
 /* Animated underline for links */
