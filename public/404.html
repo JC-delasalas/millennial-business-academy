@@ -72,15 +72,13 @@
       const hostname = window.location.hostname;
       const path = window.location.pathname;
 
-      // Check if we're on the start subdomain
-      if (hostname.includes('millennialbusinessacademy.net')) {
-        // If the path is /checkout, redirect to the courses page
-        if (path === '/checkout') {
-          window.location.href = 'https://millennialbusinessacademy.net/courses';
-        } else {
-          // For other paths on the subdomain, redirect to the main site
-          window.location.href = 'https://millennialbusinessacademy.net' + path;
-        }
+      // Handle checkout path internally
+      if (path === '/checkout') {
+        // Redirect to the courses page on the same domain
+        window.location.href = '/courses';
+      } else {
+        // For other 404 paths, just keep the user on the 404 page
+        // The page content will guide them back to the home page
       }
     };
   </script>

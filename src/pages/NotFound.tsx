@@ -14,10 +14,10 @@ const NotFound = () => {
     const hostname = window.location.hostname;
     const pathname = location.pathname;
 
-    // If we're on the start subdomain and trying to access /checkout
-    if (hostname.includes('millennialbusinessacademy.net') && pathname === '/checkout') {
-      // Redirect to the main site's checkout page
-      window.location.href = 'https://millennialbusinessacademy.net/courses';
+    // Handle checkout path internally
+    if (pathname === '/checkout') {
+      // Redirect to the courses page on the same domain
+      navigate('/courses');
       return;
     }
 
