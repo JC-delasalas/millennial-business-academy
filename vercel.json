@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "/checkout", "destination": "/courses" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "github": {

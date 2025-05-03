@@ -14,12 +14,8 @@ const NotFound = () => {
     const hostname = window.location.hostname;
     const pathname = location.pathname;
 
-    // Handle checkout path internally
-    if (pathname === '/checkout') {
-      // Redirect to the courses page on the same domain
-      navigate('/courses');
-      return;
-    }
+    // We no longer need to redirect /checkout since we have a proper checkout page
+    // Just log the 404 error for other paths
 
     console.error(
       "404 Error: User attempted to access non-existent route:",

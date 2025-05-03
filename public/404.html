@@ -72,14 +72,9 @@
       const hostname = window.location.hostname;
       const path = window.location.pathname;
 
-      // Handle checkout path internally
-      if (path === '/checkout') {
-        // Redirect to the courses page on the same domain
-        window.location.href = '/courses';
-      } else {
-        // For other 404 paths, just keep the user on the 404 page
-        // The page content will guide them back to the home page
-      }
+      // We no longer need to redirect /checkout since we have a proper checkout page
+      // For 404 paths, just keep the user on the 404 page
+      // The page content will guide them back to the home page
     };
   </script>
 </head>
