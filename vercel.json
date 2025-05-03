@@ -20,5 +20,11 @@
       ]
     }
   ],
-  "trailingSlash": false
+  "trailingSlash": false,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/checkout", "dest": "/index.html" },
+    { "src": "/courses", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }

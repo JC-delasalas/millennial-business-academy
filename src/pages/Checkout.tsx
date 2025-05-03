@@ -66,10 +66,10 @@ const Checkout = () => {
             className="text-mba-dark hover:text-mba-teal flex items-center gap-2"
             asChild
           >
-            <Link to="/courses">
+            <a href="/courses">
               <ArrowLeft className="h-4 w-4" />
               Back to Courses
-            </Link>
+            </a>
           </Button>
         </div>
 
