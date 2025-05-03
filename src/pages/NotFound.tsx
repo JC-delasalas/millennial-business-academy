@@ -1,5 +1,5 @@
 
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,13 +7,25 @@ import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // Check if we're on the start.millennialbusinessacademy.net domain
+    const hostname = window.location.hostname;
+    const pathname = location.pathname;
+
+    // If we're on the start subdomain and trying to access /checkout
+    if (hostname === 'start.millennialbusinessacademy.net' && pathname === '/checkout') {
+      // Redirect to the main site's checkout page
+      window.location.href = 'https://millennialbusinessinnovations.vercel.app/checkout';
+      return;
+    }
+
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
-  }, [location.pathname]);
+  }, [location.pathname, navigate]);
 
   return (
     <div className="min-h-screen flex flex-col">
