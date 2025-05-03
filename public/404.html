@@ -71,15 +71,15 @@
       // Get the hostname and path
       const hostname = window.location.hostname;
       const path = window.location.pathname;
-      
+
       // Check if we're on the start subdomain
-      if (hostname === 'start.millennialbusinessacademy.net') {
-        // If the path is /checkout, redirect to the main site's checkout page
+      if (hostname.includes('millennialbusinessacademy.net')) {
+        // If the path is /checkout, redirect to the courses page
         if (path === '/checkout') {
-          window.location.href = 'https://millennialbusinessinnovations.vercel.app/checkout';
+          window.location.href = 'https://millennialbusinessacademy.net/courses';
         } else {
           // For other paths on the subdomain, redirect to the main site
-          window.location.href = 'https://millennialbusinessinnovations.vercel.app' + path;
+          window.location.href = 'https://millennialbusinessacademy.net' + path;
         }
       }
     };

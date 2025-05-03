@@ -40,26 +40,30 @@
       if (!results[2]) return '';
       return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
-    
+
     // Redirect to the main site
     window.onload = function() {
       // Get the path from the current URL
       const path = window.location.pathname;
-      
+
       // Construct the redirect URL
-      let redirectUrl = 'https://millennialbusinessinnovations.vercel.app';
-      
-      // If there's a path, add it to the redirect URL
-      if (path && path !== '/') {
+      let redirectUrl = 'https://millennialbusinessacademy.net';
+
+      // Special case for checkout
+      if (path === '/checkout') {
+        redirectUrl += '/courses';
+      }
+      // If there's a path and it's not checkout, add it to the redirect URL
+      else if (path && path !== '/') {
         redirectUrl += path;
       }
-      
+
       // If there are query parameters, add them to the redirect URL
       const queryString = window.location.search;
       if (queryString) {
         redirectUrl += queryString;
       }
-      
+
       // Redirect after a short delay
       setTimeout(function() {
         window.location.href = redirectUrl;

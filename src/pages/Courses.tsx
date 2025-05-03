@@ -134,10 +134,10 @@ const Courses = () => {
                         >
                           <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent opacity-50"></span>
                           <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent opacity-50 rounded-t-full"></span>
-                          <Link to="/checkout" className="flex items-center justify-center relative z-10 w-full">
+                          <a href="https://millennialbusinessacademy.net/checkout" className="flex items-center justify-center relative z-10 w-full">
                             Enroll Now
                             <ArrowRight className="ml-2 h-4 w-4" />
-                          </Link>
+                          </a>
                         </Button>
                         <p className="text-xs text-gray-300 mt-4">
                           * 30-day money-back guarantee
@@ -281,7 +281,7 @@ const Courses = () => {
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Enroll in our courses today and take the first step toward advancing your analytics career.
           </p>
-          <Link to="/checkout">
+          <a href="https://millennialbusinessacademy.net/checkout">
             <Button
               size="lg"
               className="bg-white text-mba-dark hover:bg-gray-100 rounded-full px-8 py-6 h-auto font-bold text-lg relative overflow-hidden group"
@@ -290,7 +290,7 @@ const Courses = () => {
               <span className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/40 to-transparent opacity-50 rounded-t-full"></span>
               <span className="relative z-10">Enroll in Our Courses Now</span>
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
 
