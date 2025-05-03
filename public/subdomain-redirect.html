@@ -46,16 +46,20 @@
       // Get the path from the current URL
       const path = window.location.pathname;
 
-      // Construct the redirect URL
-      let redirectUrl = 'https://millennialbusinessacademy.net';
+      // Keep everything on the same domain
+      let redirectUrl = '';
 
       // Special case for checkout
       if (path === '/checkout') {
-        redirectUrl += '/courses';
+        redirectUrl = '/courses';
       }
-      // If there's a path and it's not checkout, add it to the redirect URL
+      // If there's a path and it's not checkout, keep the same path
       else if (path && path !== '/') {
-        redirectUrl += path;
+        redirectUrl = path;
+      }
+      // If we're at the root, go to the home page
+      else {
+        redirectUrl = '/';
       }
 
       // If there are query parameters, add them to the redirect URL
@@ -74,8 +78,8 @@
 <body>
   <div>
     <div class="loader"></div>
-    <h2>Redirecting to Millennial Business Academy...</h2>
-    <p>Please wait while we redirect you to our main site.</p>
+    <h2>Loading Millennial Business Academy...</h2>
+    <p>Please wait while we load your content.</p>
   </div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/checkout", "destination": "/courses" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "github": {
@@ -20,9 +21,5 @@
       ]
     }
   ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/checkout", "dest": "/courses" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
+  "trailingSlash": false
 }
