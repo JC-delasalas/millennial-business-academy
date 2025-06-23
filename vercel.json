@@ -2,12 +2,6 @@
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
-  "github": {
-    "enabled": true,
-    "silent": false
-  },
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
   "cleanUrls": true,
   "headers": [
     {
@@ -54,11 +48,5 @@
       ]
     }
   ],
-  "trailingSlash": false,
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/checkout", "dest": "/index.html" },
-    { "src": "/courses", "dest": "/index.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
+  "trailingSlash": false
 }
