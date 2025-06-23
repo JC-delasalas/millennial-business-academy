@@ -119,10 +119,18 @@ const ParticleAnimation: React.FC = () => {
     const initGyroscope = () => {
       if ('DeviceOrientationEvent' in window) {
         // For iOS 13+ devices that require permission
-        if (typeof (DeviceOrientationEvent as any).requestPermission === 'function') {
+        interface DeviceOrientationEventWithPermission extends DeviceOrientationEvent {
+          requestPermission?: () => Promise<string>;
+        }
+
+        const DeviceOrientationEventConstructor = DeviceOrientationEvent as unknown as {
+          requestPermission?: () => Promise<string>;
+        };
+
+        if (typeof DeviceOrientationEventConstructor.requestPermission === 'function') {
           // Create a button to request permission
           const requestPermission = () => {
-            (DeviceOrientationEvent as any).requestPermission()
+            DeviceOrientationEventConstructor.requestPermission!()
               .then((response: string) => {
                 if (response === 'granted') {
                   window.addEventListener('deviceorientation', handleDeviceOrientation);

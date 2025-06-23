@@ -21,11 +21,15 @@ const Footer = () => {
             <div className="mb-6">
               <div className="flex items-center">
                 <div className="h-12 w-12 rounded-full bg-gradient-to-r from-mba-teal to-mba-pink flex items-center justify-center p-0.5 mr-3 shadow-glow-teal" style={{ overflow: 'hidden' }}>
-                  <img
-                    src="/V1-PNG-MBA.png"
-                    alt="MBA Logo"
-                    className="w-full h-full object-contain"
-                  />
+                  <picture>
+                    <source srcSet="/V1-PNG-MBA-small.webp" type="image/webp" />
+                    <img
+                      src="/V1-PNG-MBA-optimized.png"
+                      alt="MBA Logo"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
                 <span className="text-white font-bold text-xl">Millennial Business Academy</span>
               </div>

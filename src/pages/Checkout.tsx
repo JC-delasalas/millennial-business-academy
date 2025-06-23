@@ -126,11 +126,15 @@ const Checkout = () => {
 
               <div className="mt-auto pt-8 border-t border-white/10">
                 <div className="flex items-center gap-4">
-                  <img
-                    src="/JCcloseup.jpg"
-                    alt="JC De las Alas"
-                    className="h-20 w-20 rounded-full object-cover border-2 border-mba-teal"
-                  />
+                  <picture>
+                    <source srcSet="/JCcloseup-optimized.webp" type="image/webp" />
+                    <img
+                      src="/JCcloseup-optimized.jpg"
+                      alt="JC De las Alas, Analytics Coach and Mentor"
+                      className="h-20 w-20 rounded-full object-cover border-2 border-mba-teal"
+                      loading="lazy"
+                    />
+                  </picture>
                   <div>
                     <h4 className="font-bold text-lg">JC De las Alas</h4>
                     <p className="text-gray-300">Analytics Coach & Mentor</p>

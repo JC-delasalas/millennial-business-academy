@@ -3,14 +3,30 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Courses from "./pages/Courses";
-import Checkout from "./pages/Checkout";
-import NotFound from "./pages/NotFound";
-import PlaceholderPage from "./pages/PlaceholderPage";
+import { lazy, Suspense } from "react";
 import './App.css';
 
+// Lazy load pages for better code splitting
+const Index = lazy(() => import("./pages/Index"));
+const Courses = lazy(() => import("./pages/Courses"));
+const Checkout = lazy(() => import("./pages/Checkout"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const PlaceholderPage = lazy(() => import("./pages/PlaceholderPage"));
+
 const queryClient = new QueryClient();
+
+// Loading component for Suspense fallback
+const LoadingSpinner = () => (
+  <div className="min-h-screen flex items-center justify-center bg-mba-dark">
+    <div
+      className="animate-spin rounded-full h-12 w-12 border-b-2 border-mba-teal"
+      role="status"
+      aria-label="Loading page content"
+    >
+      <span className="sr-only">Loading...</span>
+    </div>
+  </div>
+);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -18,10 +34,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/checkout" element={<Checkout />} />
+        {/* Skip to main content link for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-mba-teal text-white px-4 py-2 rounded-md z-50 focus:z-[9999]"
+        >
+          Skip to main content
+        </a>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/checkout" element={<Checkout />} />
 
           {/* Navbar Links */}
           <Route path="/learning-paths" element={<PlaceholderPage title="Learning Paths" description="Follow structured learning paths tailored to your career goals. From beginner to advanced, our curated paths guide you through the essential skills needed for analytics success." />} />
@@ -48,6 +72,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

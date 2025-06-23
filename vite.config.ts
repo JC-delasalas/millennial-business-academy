@@ -20,4 +20,26 @@ export default defineConfig(({ mode }) => ({
   },
   // Ensure assets in public folder are properly handled
   publicDir: 'public',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Vendor chunks
+          'react-vendor': ['react', 'react-dom'],
+          'router': ['react-router-dom'],
+          'ui-vendor': ['framer-motion', 'lucide-react'],
+          'radix-ui': [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-toast',
+            '@radix-ui/react-tooltip',
+            '@radix-ui/react-slot',
+            '@radix-ui/react-separator'
+          ],
+          'query': ['@tanstack/react-query'],
+        },
+      },
+    },
+    // Increase chunk size warning limit since we're now splitting properly
+    chunkSizeWarningLimit: 1000,
+  },
 }));

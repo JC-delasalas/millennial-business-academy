@@ -129,7 +129,7 @@ export default {
 			},
             backgroundImage: {
                 // Use a path that works in both dev and production environments
-                'hero-pattern': 'linear-gradient(rgba(26, 31, 44, 0.85), rgba(26, 31, 44, 0.9)), url("/JC.png")',
+                'hero-pattern': 'linear-gradient(rgba(26, 31, 44, 0.85), rgba(26, 31, 44, 0.9)), url("/JC-optimized.webp")',
                 'teal-pink-gradient': 'linear-gradient(90deg, #4DCFD9 0%, #D24C8E 100%)',
                 'teal-pink-diagonal': 'linear-gradient(135deg, #4DCFD9 0%, #D24C8E 100%)',
                 'dark-gradient': 'linear-gradient(180deg, #1A1F2C 0%, #141820 100%)',
@@ -146,5 +146,8 @@ export default {
             }
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		// eslint-disable-next-line @typescript-eslint/no-require-imports
+		require("tailwindcss-animate")
+	],
 } satisfies Config;

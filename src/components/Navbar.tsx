@@ -50,11 +50,15 @@ const Navbar = () => {
                 <div className="h-9 w-auto relative">
                   <div className="flex items-center">
                     <div className="bg-gradient-to-r from-mba-teal to-mba-pink rounded-full p-0.5 mr-2 md:mr-3 flex items-center justify-center" style={{ width: '36px', height: '36px', minWidth: '36px', overflow: 'hidden' }}>
-                      <img
-                        src="/V1-PNG-MBA.png"
-                        alt="MBA Logo"
-                        className="w-full h-full object-contain"
-                      />
+                      <picture>
+                        <source srcSet="/V1-PNG-MBA-optimized.webp" type="image/webp" />
+                        <img
+                          src="/V1-PNG-MBA-optimized.png"
+                          alt="MBA Logo"
+                          className="w-full h-full object-contain"
+                          loading="eager"
+                        />
+                      </picture>
                     </div>
                   </div>
                 </div>
@@ -89,8 +93,10 @@ const Navbar = () => {
             <div className="md:hidden flex items-center">
               <button
                 onClick={toggleMenu}
-                className="inline-flex items-center justify-center p-1.5 text-white hover:text-mba-teal-light focus:outline-none transition-colors"
-                aria-label="Toggle menu"
+                className="inline-flex items-center justify-center p-1.5 text-white hover:text-mba-teal-light focus:outline-none focus:ring-2 focus:ring-mba-teal focus:ring-offset-2 focus:ring-offset-mba-dark transition-colors rounded-md"
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
               >
                 <Menu className="h-6 w-6" />
               </button>
@@ -104,11 +110,14 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="flex justify-center px-4 sm:px-6 md:hidden absolute left-0 right-0 top-[85px]">
             <motion.div
+              id="mobile-menu"
               className="glass-dark backdrop-blur-md rounded-3xl mt-4 z-[120] w-[90%] overflow-hidden shadow-xl border border-white/10"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
+              role="navigation"
+              aria-label="Mobile navigation menu"
             >
               {/* Mobile menu links */}
               <div className="px-6 pt-5 pb-6 space-y-0">

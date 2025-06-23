@@ -181,7 +181,15 @@ const HeroSection = () => {
                     >
                       <div className="flex items-center justify-center mb-4">
                         <div className="h-20 w-20 rounded-full overflow-hidden mr-4 shadow-glow-teal flex-shrink-0 border-2 border-mba-teal/30">
-                          <img src="/JCcloseup.jpg" alt="JC De las Alas" className="w-full h-full object-cover object-top scale-150 transform translate-y-3" />
+                          <picture>
+                            <source srcSet="/JCcloseup-optimized.webp" type="image/webp" />
+                            <img
+                              src="/JCcloseup-optimized.jpg"
+                              alt="JC De las Alas"
+                              className="w-full h-full object-cover object-top scale-150 transform translate-y-3"
+                              loading="lazy"
+                            />
+                          </picture>
                         </div>
                         <div>
                           <h3 className="text-white font-bold">JC De las Alas</h3>

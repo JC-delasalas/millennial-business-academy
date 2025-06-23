@@ -18,15 +18,17 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <HeroSection />
-      <TrustedBySection />
-      <TechStackSection />
-      <AnalyticsToolsCarousel />
-      <FeaturesSection />
-      <TestimonialSection />
-      <LearningStylesSection />
-      <GenAISection />
-      <CallToAction />
+      <main id="main-content">
+        <HeroSection />
+        <TrustedBySection />
+        <TechStackSection />
+        <AnalyticsToolsCarousel />
+        <FeaturesSection />
+        <TestimonialSection />
+        <LearningStylesSection />
+        <GenAISection />
+        <CallToAction />
+      </main>
       <Footer />
     </div>
   );
